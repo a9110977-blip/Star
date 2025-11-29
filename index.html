@@ -1,80 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 小傑4歲生日 - 佩佩豬互動祝福系列 🎂</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background: linear-gradient(135deg, #87CEEB 0%, #FFB6C1 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-        .birthday-title {
-            font-size: clamp(28px, 8vw, 48px);
-            background: linear-gradient(45deg, #FF69B4, #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        .series-info {
-            color: #333;
-            font-size: clamp(16px, 4vw, 20px);
-            font-weight: bold;
-        }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .video-container {
-            position: relative;
-            background: rgba(255,255,255,0.9);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(255,105,180,0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .video-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255,105,180,0.4);
-        }
-        .segment-title {
-            font-size: clamp(20px, 5vw, 28px);
-            color: #FF69B4;
-            text-align: center;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        .peppa-video {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border-radius: 15px;
-            border: 3px solid #FFB6C1;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-        .controls {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 15px;
-        }
-        .btn {
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
-            color
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小傑4歲生日 - 佩佩豬互動祝福</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+      background: linear-gradient(135deg, #87CEEB 0%, #FFB6C1 100%);
+      min-height: 100vh;
+      padding: 16px;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 26px;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+      margin-bottom: 6px;
+    }
+    .header p {
+      color: #333;
+      font-weight: 600;
+    }
+    .card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 8px 20px rgba(255,105,180,0.35);
+      margin-bottom: 14px;
+    }
+    .card h2 {
+      font-size: 18px;
+      color: #FF69B4;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .card iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: 0;
+      border-radius: 12px;
+      display: block;
+      background: #000;
+    }
+    .hint {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-top: 6px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #444;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>🎂 小傑4歲生日快樂 🎂</h1>
+      <p>佩佩豬專屬互動祝福（點影片就能玩）</p>
+    </div>
+
+    <div class="card">
+      <h2>1/10 佩佩來找小傑</h2>
+      <iframe
+        src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3fbe512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
+        title="佩佩豬尋找小傑"
+        allow="autoplay; picture-in-picture"
+      ></iframe>
+      <div class="hint">點影片中間播放，點豬豬會「哼哼」</div>
+    </div>
+
+    <div class="card">
+      <h2>2/10 生日大祝福</h2>
+      <iframe
+        src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3fbe512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
+        title="佩佩豬生日祝福"
+        allow="autoplay; picture-in-picture"
+      ></iframe>
+      <div class="hint">祝福小傑天天開心、長得高高壯壯</div>
+    </div>
+
+    <div class="card">
+      <h2>3/10 豬豬好朋友</h2>
+      <iframe
+        src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3fbe512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
+        title="佩佩豬朋友互動"
+        allow="autoplay; picture-in-picture"
+      ></iframe>
+      <div class="hint">問好朋友名字，一起「哼哼」</div>
+    </div>
+
+    <div class="card">
+      <h2>4/10 一起唱生日歌</h2>
+      <iframe
+        src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3fbe512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
+        title="佩佩豬生日歌"
+        allow="autoplay; picture-in-picture"
+      ></iframe>
+      <div class="hint">家長可暫停，帶小傑一起唱</div>
+    </div>
+
+    <div class="card">
+      <h2>5/10 溫暖結尾</h2>
+      <iframe
+        src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3fbe512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
+        title="佩佩豬生日結尾"
+        allow="autoplay; picture-in-picture"
+      ></iframe>
+      <div class="hint">最後一起說掰掰，下次再玩泥巴水坑</div>
+    </div>
+
+    <div class="footer">
+      專為小傑4歲生日設計，手機直立觀看最佳。
+    </div>
+  </div>
+</body>
+</html>
