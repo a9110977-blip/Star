@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 小傑4歲生日 - 佩佩豬互動祝福系列 🎂</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: linear-gradient(135deg, #87CEEB 0%, #FFB6C1 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .birthday-title {
+            font-size: clamp(28px, 8vw, 48px);
+            background: linear-gradient(45deg, #FF69B4, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .series-info {
+            color: #333;
+            font-size: clamp(16px, 4vw, 20px);
+            font-weight: bold;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .video-container {
+            position: relative;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(255,105,180,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255,105,180,0.4);
+        }
+        .segment-title {
+            font-size: clamp(20px, 5vw, 28px);
+            color: #FF69B4;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .peppa-video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 15px;
+            border: 3px solid #FFB6C1;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            color
