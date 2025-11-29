@@ -1,141 +1,52 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小傑4歲生日 - 佩佩豬互動祝福</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-      background: linear-gradient(135deg, #87CEEB 0%, #FFB6C1 100%);
-      min-height: 100vh;
-      padding: 16px;
-    }
-    .wrap { max-width: 900px; margin: 0 auto; }
-    .header { text-align: center; margin-bottom: 20px; }
-    .header h1 {
-      font-size: 24px; color: #fff;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
-      margin-bottom: 6px;
-    }
-    .header p { color: #333; font-weight: 600; }
-    .card {
-      background: rgba(255,255,255,0.95);
-      border-radius: 18px;
-      padding: 14px;
-      box-shadow: 0 8px 20px rgba(255,105,180,0.35);
-      margin-bottom: 14px;
-    }
-    .card h2 {
-      font-size: 18px;
-      color: #FF69B4;
-      margin-bottom: 8px;
-      text-align: center;
-    }
-    .btn-link {
-      display: inline-block;
-      background: #ff69b4;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-    }
-    .btn-wrap {
-      text-align: center;
-      margin-top: 8px;
-    }
-    .hint {
-      font-size: 13px;
-      color: #666;
-      text-align: center;
-      margin-top: 6px;
-    }
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      color: #444;
-      margin-top: 18px;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="header">
-      <h1>🎂 小傑4歲生日快樂 🎂</h1>
-      <p>佩佩豬專屬互動祝福（點按鈕就能播放影片）</p>
-    </div>
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import NotFound from "@/pages/NotFound";
+import { Route, Switch } from "wouter";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import Home from "./pages/Home";
+import Scene1 from "./pages/Scene1";
+import Scene2 from "./pages/Scene2";
+import Scene3 from "./pages/Scene3";
+import Scene4 from "./pages/Scene4";
+import Scene5 from "./pages/Scene5";
 
-    <!-- 1/10 -->
-    <div class="card">
-      <h2>1/10 佩佩來找小傑</h2>
-      <div class="btn-wrap">
-        <a class="btn-link"
-           href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3be512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
-           target="_blank">
-          點我播放這一段影片
-        </a>
-      </div>
-      <div class="hint">新頁面開啟互動影片，點豬豬會「哼哼」</div>
-    </div>
 
-    <!-- 2/10 -->
-    <div class="card">
-      <h2>2/10 生日大祝福</h2>
-      <div class="btn-wrap">
-        <a class="btn-link"
-           href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3be512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
-           target="_blank">
-          點我播放這一段影片
-        </a>
-      </div>
-      <div class="hint">祝福小傑天天開心、長得高高壯壯</div>
-    </div>
+function Router() {
+  return (
+    <Switch>
+      <Route path={"/"} component={Home} />
+      <Route path={"/scene/1"} component={Scene1} />
+      <Route path={"/scene/2"} component={Scene2} />
+      <Route path={"/scene/3"} component={Scene3} />
+      <Route path={"/scene/4"} component={Scene4} />
+      <Route path={"/scene/5"} component={Scene5} />
+      <Route path={"/404"} component={NotFound} />
+      {/* Final fallback route */}
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
 
-    <!-- 3/10 -->
-    <div class="card">
-      <h2>3/10 豬豬好朋友</h2>
-      <div class="btn-wrap">
-        <a class="btn-link"
-           href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3be512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
-           target="_blank">
-          點我播放這一段影片
-        </a>
-      </div>
-      <div class="hint">問好朋友名字，一起「哼哼」</div>
-    </div>
+// NOTE: About Theme
+// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
+//   to keep consistent foreground/background color across components
+// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
-    <!-- 4/10 -->
-    <div class="card">
-      <h2>4/10 一起唱生日歌</h2>
-      <div class="btn-wrap">
-        <a class="btn-link"
-           href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3be512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
-           target="_blank">
-          點我播放這一段影片
-        </a>
-      </div>
-      <div class="hint">家長可暫停，帶小傑一起唱生日歌</div>
-    </div>
+function App() {
+  return (
+    <ErrorBoundary>
+      <ThemeProvider
+        defaultTheme="light"
+        // switchable
+      >
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
+  );
+}
 
-    <!-- 5/10 -->
-    <div class="card">
-      <h2>5/10 溫暖結尾</h2>
-      <div class="btn-wrap">
-        <a class="btn-link"
-           href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/124b4910b8f3be512332eaf24d56944/8f145dd6-596f-4205-a71d-6e3a64d2cb1b/index.html"
-           target="_blank">
-          點我播放這一段影片
-        </a>
-      </div>
-      <div class="hint">最後一起說掰掰，下次再玩泥巴水坑</div>
-    </div>
-
-    <div class="footer">
-      專為小傑4歲生日設計，手機直立觀看最佳。
-    </div>
-  </div>
-</body>
-</html>
+export default App;
